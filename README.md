@@ -297,7 +297,3 @@ Luis Beu - me@luisbeu.de
 [issues-shield]: https://img.shields.io/github/issues/beuluis/nestjs-chatter-patrol.svg?style=flat-square
 [issues-url]: https://github.com/beuluis/nestjs-chatter-patrol/issues
 [license-shield]: https://img.shields.io/github/license/beuluis/nestjs-chatter-patrol.svg?style=flat-square
-
-```
-
-```
