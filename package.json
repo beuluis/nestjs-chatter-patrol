@@ -1,0 +1,76 @@
+{
+  "name": "@beuluis/nestjs-chatter-patrol",
+  "version": "0.0.0",
+  "description": "Shared NestJS communication sanitation functionality",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint .",
+    "format": "prettier . --check",
+    "prepack": "npm run build",
+    "build": "tsc --build --project tsconfig.build.json",
+    "prepare": "husky install"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beuluis/nestjs-chatter-patrol.git"
+  },
+  "keywords": [
+    "nestjs",
+    "sanitation"
+  ],
+  "author": "Luis Beu <me@luisbeu.de> (https://luisbeu.de/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/beuluis/nestjs-chatter-patrol/issues"
+  },
+  "homepage": "https://github.com/beuluis/nestjs-chatter-patrol#readme",
+  "prettier": "@beuluis/prettier-config",
+  "lint-staged": {
+    "*.md": [
+      "prettier --write"
+    ],
+    "*.{js,ts,json,yml,yaml}": [
+      "prettier --write",
+      "eslint"
+    ]
+  },
+  "np": {
+    "tests": false,
+    "publish": false
+  },
+  "devDependencies": {
+    "@beuluis/eslint-config": "1.2.3",
+    "@beuluis/hook-cli": "1.2.1",
+    "@beuluis/prettier-config": "2.0.2",
+    "@nestjs/common": "9.4.1",
+    "@types/jest": "29.5.1",
+    "@types/node": "20.2.1",
+    "@types/sanitize-html": "2.9.0",
+    "eslint": "8.39.0",
+    "fastify": "4.17.0",
+    "husky": "8.0.3",
+    "jest": "29.5.0",
+    "jest-mock-extended": "3.0.4",
+    "lint-staged": "13.2.2",
+    "np": "7.7.0",
+    "ts-jest": "29.1.0",
+    "ts-node": "10.9.1",
+    "typescript": "5.0.4"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "^9",
+    "fastify": "^4"
+  },
+  "dependencies": {
+    "rxjs": "^7.8.1",
+    "sanitize-html": "^2.10.0"
+  }
+}
