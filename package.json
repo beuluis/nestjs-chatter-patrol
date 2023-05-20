@@ -12,7 +12,7 @@
     "lint": "eslint .",
     "format": "prettier . --check",
     "prepack": "npm run build",
-    "build": "tsc --build --project tsconfig.build.json",
+    "build": "tsc --project tsconfig.build.json",
     "prepare": "husky install"
   },
   "publishConfig": {
