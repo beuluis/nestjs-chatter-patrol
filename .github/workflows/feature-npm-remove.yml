@@ -1,4 +1,4 @@
-name: 'Handling feature dist-tag'
+name: 'Handling feature dist-tag removal'
 
 on:
   pull_request:
