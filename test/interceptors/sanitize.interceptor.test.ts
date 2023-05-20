@@ -31,6 +31,14 @@ describe('SanitizeInterceptor', () => {
         jest.clearAllMocks();
     });
 
+    it('should initialize with default logger', () => {
+        expect.assertions(1);
+
+        const sanitizeInterceptorInstance = new SanitizeInterceptor();
+
+        expect(sanitizeInterceptorInstance).toBeDefined();
+    });
+
     const testRequestSanitization = (
         payload: unknown,
         expected: unknown,
@@ -575,6 +583,26 @@ describe('SanitizeInterceptor', () => {
 
             expect(mockLogger.warn).toHaveBeenCalledWith(
                 'Error while sanitizing path: /test method: POST: Unexpected error',
+            );
+        });
+
+        it('should throw InternalServerErrorException and log when unexpected error when error is not instance of error', () => {
+            expect.assertions(2);
+
+            const sanitizeInterceptor = new SanitizeInterceptor({ logger: mockLogger });
+
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            jest.spyOn(sanitizeInterceptor as any, 'sanitizeObject').mockImplementation(() => {
+                // eslint-disable-next-line @typescript-eslint/no-throw-literal
+                throw 'Unexpected error';
+            });
+
+            expect(() => sanitizeInterceptor.intercept(mockContext, mockHandler)).toThrow(
+                InternalServerErrorException,
+            );
+
+            expect(mockLogger.warn).toHaveBeenCalledWith(
+                'Unexpected error while sanitizing path: /test method: POST',
             );
         });
 

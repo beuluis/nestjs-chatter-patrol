@@ -95,7 +95,7 @@ export class SanitizeInterceptor implements NestInterceptor {
         return `${currentPath}.${nextPathBit}`;
     }
 
-    public constructor(options: SanitizeInterceptorOptions) {
+    public constructor(options: SanitizeInterceptorOptions = {}) {
         // Get all from parameters or initialize with default values
         this.logger = options.logger ?? new Logger(SanitizeInterceptor.name);
         this.logLevel = options.logLevel ?? 'warn';

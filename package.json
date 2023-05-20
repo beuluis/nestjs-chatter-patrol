@@ -9,6 +9,7 @@
   ],
   "scripts": {
     "test": "jest",
+    "test:cov": "jest --coverage",
     "lint": "eslint .",
     "format": "prettier . --check",
     "prepack": "npm run build",
