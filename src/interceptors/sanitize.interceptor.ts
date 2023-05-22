@@ -104,7 +104,7 @@ export class SanitizeInterceptor implements NestInterceptor {
         this.whitelists = this.whitelists.concat(options.whitelists ?? []);
     }
 
-    private handleError(error: unknown, path: string, method: string): never {
+    protected handleError(error: unknown, path: string, method: string): never {
         if (error instanceof Error) {
             // Log the error
             this.logger[this.logLevel](
@@ -314,5 +314,5 @@ export class SanitizeInterceptor implements NestInterceptor {
         return value;
     }
 
-    private readonly whitelists: Whitelist[] = [];
+    protected readonly whitelists: Whitelist[] = [];
 }

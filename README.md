@@ -28,7 +28,7 @@ A collection of sanitation functionality for [NestJS](https://nestjs.com/).
 
 Most functionality follows the `opt-out` principle. So you need to specifically whitelist stuff.
 
-Another important design is that it crashed loud. This is done to not fail silently since sanitation is an important part of the app that should not fail.
+Another important design decision is to crash loudly, this avoid sanitation errors and issues happening unnoticed and posing a threat to your app´s integrity.
 
 ## Installation
 
@@ -265,7 +265,7 @@ Whitelist field path in array element
 
 Normally I would not test third party libs, but since this is such an important building block I follow a different approach to testing.
 
-The test run the interceptor against multiple payloads compiled from known XSS payloads from github. Generally there are test that are probably to much, but hey much helps much. Right? RIGHT?
+The test run the interceptor against multiple payloads compiled from known XSS payloads from github. Generally there are test that are probably too much, but hey much helps much. Right? RIGHT?
 
 <!-- CONTRIBUTING -->
 
