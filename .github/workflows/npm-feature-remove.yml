@@ -10,7 +10,7 @@ on:
 jobs:
   remove-feature-tag:
     if: ${{ github.event.action == 'closed' }}
-    uses: beuluis/reusable-workflows/.github/workflows/remove-dist-tag-npm.yml@main
+    uses: beuluis/reusable-workflows/.github/workflows/npm-remove-dist-tag.yml@main
     with:
       dist_tag: ${{ github.head_ref }}
     secrets: inherit

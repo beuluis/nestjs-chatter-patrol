@@ -1,0 +1,17 @@
+name: 'Handling feature dist-tag'
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened # pr is created
+      - reopened # pr is reopened
+      - synchronize # pr got new commit
+
+jobs:
+  publish-feature-tag:
+    uses: beuluis/reusable-workflows/.github/workflows/npm-publish.yml@main
+    with:
+      dist_tag: ${{ github.head_ref }}
+    secrets: inherit
