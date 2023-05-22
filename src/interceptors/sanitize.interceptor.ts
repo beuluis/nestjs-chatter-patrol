@@ -164,7 +164,7 @@ export class SanitizeInterceptor implements NestInterceptor {
         return typeof value === 'object' && value !== null && !Array.isArray(value);
     }
 
-    private readonly logLevel: LogLevel;
+    protected readonly logLevel: LogLevel;
 
     private readonly logger: Logger;
 
