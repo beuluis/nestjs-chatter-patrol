@@ -43,10 +43,6 @@
       "eslint"
     ]
   },
-  "np": {
-    "tests": false,
-    "publish": false
-  },
   "devDependencies": {
     "@beuluis/eslint-config": "1.2.3",
     "@beuluis/hook-cli": "1.2.1",
@@ -61,7 +57,6 @@
     "jest": "29.5.0",
     "jest-mock-extended": "3.0.4",
     "lint-staged": "13.2.2",
-    "np": "7.7.0",
     "ts-jest": "29.1.0",
     "ts-node": "10.9.1",
     "typescript": "5.0.4"
