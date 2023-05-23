@@ -10,6 +10,9 @@ on:
       - synchronize # pr got new commit
 
 jobs:
+  testing:
+    uses: ./.github/workflows/node-qa-testing.yml
+
   publish-feature-tag:
     uses: beuluis/reusable-workflows/.github/workflows/npm-publish.yml@main
     with:
