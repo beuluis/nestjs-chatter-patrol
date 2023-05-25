@@ -1,4 +1,4 @@
-name: 'Publish pack with next dist-tag'
+name: 'Publish pack with next dist-tag with npm registry'
 
 on:
   workflow_dispatch:
