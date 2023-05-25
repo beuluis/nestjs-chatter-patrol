@@ -85,7 +85,7 @@ export interface SanitizeInterceptorOptions {
 
 @Injectable()
 export class SanitizeInterceptor implements NestInterceptor {
-    private constructPath(currentPath: string, nextPathBit: string): string {
+    protected constructPath(currentPath: string, nextPathBit: string): string {
         // If the currentPath is empty, we can just return the nextPathBit
         if (currentPath === '') {
             return nextPathBit;
@@ -153,22 +153,22 @@ export class SanitizeInterceptor implements NestInterceptor {
     }
 
     // Determines if the value is a SanitizeFieldOptions object to configure the sanitizeHtml function
-    private isSanitizeFieldOptions(
+    protected isSanitizeFieldOptions(
         value: RegExp | SanitizeFieldOptions | string,
     ): value is SanitizeFieldOptions {
         return typeof value === 'object' && 'fieldPath' in value;
     }
 
     // Determines if the value is an object that should be sanitized. Null or Array are not considered objects in this case
-    private isToSanitizedObject(value: unknown): value is Record<string, unknown> {
+    protected isToSanitizedObject(value: unknown): value is Record<string, unknown> {
         return typeof value === 'object' && value !== null && !Array.isArray(value);
     }
 
     protected readonly logLevel: LogLevel;
 
-    private readonly logger: Logger;
+    protected readonly logger: Logger;
 
-    private matchesMethod(methods: HTTPMethods[] | 'all', methodToMatch: string): boolean {
+    protected matchesMethod(methods: HTTPMethods[] | 'all', methodToMatch: string): boolean {
         // If the methods is 'all', we can just return true
         if (methods === 'all') {
             return true;
@@ -178,7 +178,7 @@ export class SanitizeInterceptor implements NestInterceptor {
         return methods.includes(methodToMatch as unknown as HTTPMethods);
     }
 
-    private matchesPath(path: Path, pathToMatch: string): boolean {
+    protected matchesPath(path: Path, pathToMatch: string): boolean {
         // If the urlPath is a string, we can just compare it to the urlPathToMatch
         if (typeof path === 'string') {
             return path === pathToMatch;
@@ -188,7 +188,7 @@ export class SanitizeInterceptor implements NestInterceptor {
         return path.test(pathToMatch);
     }
 
-    private matchesScope(scope: Scope, scopeToMatch: string): boolean {
+    protected matchesScope(scope: Scope, scopeToMatch: string): boolean {
         // If the scope is 'both', we can just return true
         if (scope === 'both') {
             return true;
@@ -198,7 +198,7 @@ export class SanitizeInterceptor implements NestInterceptor {
         return scope === scopeToMatch;
     }
 
-    private maybeSanitizeScope(
+    protected maybeSanitizeScope(
         data: unknown,
         urlPath: string,
         method: string,
@@ -228,7 +228,7 @@ export class SanitizeInterceptor implements NestInterceptor {
     }
 
     // Recursive function to sanitize an object
-    private sanitizeObject(
+    protected sanitizeObject(
         object: Record<string, unknown>,
         whitelistConfig?: Whitelist,
         recursiveFieldPath = '',
@@ -265,7 +265,7 @@ export class SanitizeInterceptor implements NestInterceptor {
     }
 
     // Function to sanitize any value
-    private sanitizeValue(
+    protected sanitizeValue(
         value: unknown,
         whitelistConfig?: Whitelist,
         recursiveFieldPath = '',
