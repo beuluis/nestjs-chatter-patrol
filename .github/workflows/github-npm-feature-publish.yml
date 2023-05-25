@@ -4,10 +4,6 @@ on:
   pull_request:
     branches:
       - main
-    types:
-      - opened # pr is created
-      - reopened # pr is reopened
-      - synchronize # pr got new commit
 
 jobs:
   testing:
