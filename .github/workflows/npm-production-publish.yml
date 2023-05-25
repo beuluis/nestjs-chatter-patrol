@@ -1,4 +1,4 @@
-name: 'Publish pack with latest dist-tag'
+name: 'Publish pack with latest dist-tag with npm registry'
 
 on:
   release:
