@@ -1,6 +1,6 @@
 {
   "name": "@beuluis/nestjs-chatter-patrol",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Shared NestJS communication sanitation functionality",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
