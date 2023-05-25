@@ -6,7 +6,6 @@ on:
     branches:
       - main
 
-# TODO: use np for release template. basically it should be possible to use 1.4.1 as next version and then later tag it and release
 jobs:
   testing:
     uses: ./.github/workflows/node-qa-testing.yml
