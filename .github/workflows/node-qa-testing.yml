@@ -6,5 +6,7 @@ on:
 
 jobs:
   testing:
+    permissions:
+      pull-requests: write
     uses: beuluis/reusable-workflows/.github/workflows/node-qa-testing.yml@main
     secrets: inherit
