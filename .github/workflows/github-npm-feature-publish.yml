@@ -13,7 +13,7 @@ jobs:
   testing:
     permissions:
       pull-requests: write
-    uses: ./.github/workflows/node-qa-testing.yml
+    uses: beuluis/reusable-workflows/.github/workflows/node-qa-testing.yml@main
     secrets: inherit
 
   publish-feature-tag:
