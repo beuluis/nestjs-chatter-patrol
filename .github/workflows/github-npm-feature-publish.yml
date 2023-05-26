@@ -11,7 +11,10 @@ on:
 
 jobs:
   testing:
-    uses: ./.github/workflows/node-qa-testing.yml
+    permissions:
+      pull-requests: write
+    uses: beuluis/reusable-workflows/.github/workflows/node-qa-testing.yml@main
+    secrets: inherit
 
   publish-feature-tag:
     needs: testing
