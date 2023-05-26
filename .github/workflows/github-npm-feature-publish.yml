@@ -11,8 +11,6 @@ on:
 
 jobs:
   testing:
-    permissions:
-      pull-requests: write
     uses: ./.github/workflows/node-qa-testing.yml
     secrets: inherit
 
