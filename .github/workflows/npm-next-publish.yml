@@ -8,6 +8,8 @@ on:
 
 jobs:
   testing:
+    permissions:
+      contents: write
     uses: beuluis/reusable-workflows/.github/workflows/node-qa-testing.yml@main
     secrets: inherit
 
