@@ -12,6 +12,7 @@ on:
 jobs:
   testing:
     uses: ./.github/workflows/node-qa-testing.yml
+    secrets: inherit
 
   publish-feature-tag:
     needs: testing
