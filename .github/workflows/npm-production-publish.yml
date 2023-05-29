@@ -8,6 +8,8 @@ on:
 jobs:
   testing:
     uses: beuluis/reusable-workflows/.github/workflows/node-qa-testing.yml@main
+    with:
+      skip_coverage_report: true
     secrets: inherit
 
   publish-npm:
