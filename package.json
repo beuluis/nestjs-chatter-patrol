@@ -47,7 +47,7 @@
     "@beuluis/eslint-config": "1.2.3",
     "@beuluis/hook-cli": "1.2.1",
     "@beuluis/prettier-config": "2.0.2",
-    "@nestjs/common": "9.4.1",
+    "@nestjs/common": "10.0.5",
     "@types/jest": "29.5.1",
     "@types/node": "20.2.1",
     "eslint": "8.39.0",
@@ -61,7 +61,7 @@
     "typescript": "5.0.4"
   },
   "peerDependencies": {
-    "@nestjs/common": "^9",
+    "@nestjs/common": "^9 || ^10.0.0",
     "fastify": "^4"
   },
   "dependencies": {
