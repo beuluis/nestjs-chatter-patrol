@@ -1,5 +1,9 @@
 # Changelog
 
+## 2023-07-12 - 0.0.4
+
+-   Change logger type to accept more logger setups
+
 ## 2023-05-25 - 0.0.3
 
 -   Change all members to protected to easily wrap it
