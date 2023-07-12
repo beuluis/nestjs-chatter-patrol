@@ -7,6 +7,10 @@ import sanitizeHtml from 'sanitize-html';
 
 type LogLevel = 'error' | 'warn';
 
+type MinimalLogger = {
+    [Property in LogLevel]: (message: string) => void;
+};
+
 type Path = RegExp | string;
 
 type Scope = 'both' | 'request' | 'response';
@@ -76,7 +80,7 @@ export interface SanitizeInterceptorOptions {
     /**
      * Instance of the logger to be used. Defaults to @nestjs/common´s logger
      */
-    logger?: Logger;
+    logger?: MinimalLogger;
     /**
      * Whitelist of paths, methods and fields to be ignored by the interceptor
      */
@@ -166,7 +170,7 @@ export class SanitizeInterceptor implements NestInterceptor {
 
     protected readonly logLevel: LogLevel;
 
-    protected readonly logger: Logger;
+    protected readonly logger: MinimalLogger;
 
     protected matchesMethod(methods: HTTPMethods[] | 'all', methodToMatch: string): boolean {
         // If the methods is 'all', we can just return true
