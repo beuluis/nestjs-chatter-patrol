@@ -1,5 +1,9 @@
 # Changelog
 
+## 2023-07-12 - 0.0.5
+
+-   Add needed types to deps
+
 ## 2023-07-12 - 0.0.4
 
 -   Change logger type to accept more logger setups
